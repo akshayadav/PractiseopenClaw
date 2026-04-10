@@ -1,0 +1,5 @@
+client_secret_*.json
+._client_secret_*.json
+*.credentials.json
+.env
+._*
