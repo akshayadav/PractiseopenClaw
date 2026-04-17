@@ -4,7 +4,7 @@ A fully local multi-agent AI system running on edge hardware. No cloud inference
 
 ## Architecture
 
-- **Captain** (Google Gemma 3 12B) on Mac Mini 16GB via LM Studio -- lead orchestrator
+- **Captain** (Google Gemma 4) on Mac Mini 16GB via LM Studio -- lead orchestrator
 - **Comms, Scout, Laala** (Qwen 2.5 3B) on Jetson Orin Nano via Ollama -- specialist sub-agents
 - **Telegram** as the user interface
 - **Gmail monitoring** via Google Cloud Pub/Sub + cron polling
@@ -21,7 +21,7 @@ scripts/
 
 ## Key Decisions
 
-**Why Gemma 3 12B over Qwen 3 8B for Captain?**
+**Why Gemma 4 for Captain?**
 Better multi-tool orchestration, multimodal (text + images), reliable instruction following for delegation tasks. Fits in 16GB RAM.
 
 **Why Qwen 2.5 3B for sub-agents?**

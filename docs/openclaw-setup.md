@@ -15,7 +15,7 @@ type: project
 
 ```
 Captain (lead agent, default)
-  model: lmstudio/google/gemma-3-12b (on Mac)
+  model: lmstudio/google/gemma-4 (on Mac)
   workspace: ~/.openclaw/workspace
   can spawn: comms, laala, scout
 
@@ -34,7 +34,7 @@ Scout (research)          — ollama/qwen2.5:3b (local Jetson)
 
 | Provider | Base URL | Model | Used By |
 |----------|----------|-------|---------|
-| lmstudio | http://<MAC_IP>:1234/v1 | google/gemma-3-12b | Captain |
+| lmstudio | http://<MAC_IP>:1234/v1 | google/gemma-4 | Captain |
 | ollama | http://localhost:11434/v1 | qwen2.5:3b | Comms, Laala, Scout |
 
 ## Gateway
@@ -61,7 +61,7 @@ OpenClaw has three tools profiles that control which tool schemas are injected i
 | `messaging` | + messaging tools | Medium |
 | `coding` | + exec, sessions_spawn, subagents, fs tools | Largest prompt |
 
-**Current setting:** `tools.profile: "minimal"` (to fit gemma-3-12b's context window)
+**Current setting:** `tools.profile: "minimal"` (to fit gemma-4's context window)
 
 ### Which tools are in which profile
 
@@ -232,7 +232,7 @@ These are different tokens for different purposes.
 **Fix:**
 1. Reduce `tools.profile` (coding > messaging > minimal)
 2. Remove unnecessary tools from `alsoAllow`
-3. Increase context length in LM Studio (for gemma-3-12b on Mac)
+3. Increase context length in LM Studio (for gemma-4 on Mac)
 4. After changes, restart gateway: `systemctl --user restart openclaw-gateway`
 
 ## Telegram "terminated by other getUpdates request"
